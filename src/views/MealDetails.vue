@@ -1,21 +1,34 @@
 <template lang="">
   <div class="text-center mx-auto p-6">
-    <h1 class="text-5xl font-bold mb-5 text-raspberry">{{ meal.strMeal }}</h1>
+    <h1 class="text-5xl font-bold text-raspberry">{{ meal.strMeal }}</h1>
   </div>
-  <div class="items-center max-w-[700px] mx-auto">
+  <div class="items-center max-w-[700px] mx-auto bg-white">
     <img :src="meal.strMealThumb" :alt="meal.stMeal" class="" />
-    <div class="grid grid-cols-1 sm:grid-cols-3 text-lg py-2">
+    <div class="grid grid-cols-1 sm:grid-cols-3 text-lg py-2 text-center">
       <div>
-        <strong class="font-bold">Category: </strong>{{ meal.strCategory }}
+        <strong class="font-bold">Category: </strong>
+        <router-link
+          :to="{ name: 'byCategory', params: { category: meal.strCategory } }"
+          class="hover:text-raspberry transition-colors"
+        >
+          {{ meal.strCategory }}
+        </router-link>
       </div>
-      <div><strong class="font-bold">Area: </strong>{{ meal.strArea }}</div>
+      <div>
+        <strong class="font-bold">Area: </strong>
+        <router-link
+          :to="{ name: 'byArea', params: { area: meal.strArea } }"
+          class="hover:text-raspberry transition-colors"
+        >
+          {{ meal.strArea }}
+        </router-link>
+      </div>
       <div><strong class="font-bold">Tags: </strong>{{ meal.strTags }}</div>
     </div>
-
-    <div class="my-3">
+    <div class="my-3 px-4">
       {{ meal.strInstructions }}
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2">
+    <div class="grid grid-cols-1 md:grid-cols-2 px-4 pb-4">
       <div>
         <h2 class="text-2xl font-semibold mb-2">Ingredients</h2>
         <ul>
@@ -36,16 +49,16 @@
           </template>
         </ul>
       </div>
-      <div class="flex w-[700px] mt-6 justify-between">
-        <YoutubeButton>Go to YouTube</YoutubeButton>
-        <a
-          :href="meal.strSource"
-          target="_blank"
-          class="px-3 py-2 rounded border-none"
-        >
-          View Original Source
-        </a>
-      </div>
+    </div>
+    <div class="flex px-4 w-full py-4 justify-between">
+      <YoutubeButton>Go to YouTube</YoutubeButton>
+      <a
+        :href="meal.strSource"
+        target="_blank"
+        class="px-3 py-2 rounded border-none"
+      >
+        View Original Source
+      </a>
     </div>
   </div>
 </template>

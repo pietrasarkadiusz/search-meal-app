@@ -7,6 +7,9 @@ import MealsByIngredient from '../views/MealsByIngredient.vue';
 import MealsByName from '../views/MealsByName.vue';
 import MealDetails from '../views/MealDetails.vue';
 import Ingredients from '../views/Ingredients.vue';
+import Categories from '../views/Categories.vue';
+import MealsByCategory from '../views/MealsByCategory.vue';
+import MealsByArea from '../views/MealsByArea.vue';
 
 const routes = [
   {
@@ -37,6 +40,21 @@ const routes = [
         path: '/by-ingredient/:ingredient',
         name: 'byIngredient',
         component: MealsByIngredient,
+      },
+      {
+        path: '/categories',
+        name: 'categories',
+        component: Categories,
+      },
+      {
+        path: '/by-category/:category?',
+        name: 'byCategory',
+        component: MealsByCategory,
+      },
+      {
+        path: '/by-area/:area?',
+        name: 'byArea',
+        component: MealsByArea,
       },
       {
         path: '/meal/:id',

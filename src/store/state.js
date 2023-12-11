@@ -3,4 +3,7 @@ export default {
   mealsByLetter: [],
   mealsByIngredient: [],
   ingredient: {},
+  mealsByCategory: [],
+  category: {},
+  mealsByArea: [],
 };

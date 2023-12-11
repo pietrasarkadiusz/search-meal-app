@@ -17,3 +17,15 @@ export function searchMealsByIngredient({ commit }, ingredient) {
     commit('setMealsByIngredient', data.meals);
   });
 }
+
+export function searchMealsByCategory({ commit }, category) {
+  axiosClient.get('filter.php?c=' + category).then(({ data }) => {
+    commit('setMealsByCategory', data.meals);
+  });
+}
+
+export function searchMealsByArea({ commit }, area) {
+  axiosClient.get('filter.php?a=' + area).then(({ data }) => {
+    commit('setMealsByArea', data.meals);
+  });
+}

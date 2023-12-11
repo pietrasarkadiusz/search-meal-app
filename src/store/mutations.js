@@ -13,3 +13,15 @@ export function setMealsByIngredient(state, meals) {
 export function setIngredient(state, ingredient) {
   state.ingredient = ingredient;
 }
+
+export function setMealsByCategory(state, meals) {
+  state.mealsByCategory = meals || [];
+}
+
+export function setCategory(state, category) {
+  state.category = category;
+}
+
+export function setMealsByArea(state, meals) {
+  state.mealsByArea = meals || [];
+}
